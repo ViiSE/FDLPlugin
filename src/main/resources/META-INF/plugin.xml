@@ -19,6 +19,8 @@
         <fileTypeFactory implementation="com.github.viise.fdl.FDLFileTypeFactory"/>
         <lang.parserDefinition language="FDL"
                                implementationClass="com.github.viise.fdl.FDLParserDefinition"/>
+        <lang.syntaxHighlighterFactory language="FDL"
+                                       implementationClass="com.github.viise.fdl.FDLSyntaxHighlighterFactory"/>
     </extensions>
 
     <actions>

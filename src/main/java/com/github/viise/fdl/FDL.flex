@@ -74,15 +74,15 @@ TRUE     = [tT][rR][uU][eE]                     // {T}{R}{U}{E}
 FALSE    = [fF][aA][lL][sS][eE]                 // {F}{A}{L}{S}{E}
 
 INTEGER=0|[1-9][0-9]*
-FLOAT={INTEGER}{DOT}{INTEGER}
+FLOAT=({INTEGER}{DOT}{INTEGER})
 
 HEX=0[xX]({HEX_DIGIT})+
 HEX_DIGIT=([0-9]|[a-f]|[A-F])
 
 NUMBER = INTEGER | FLOAT | HEX
 
-STRING=[^\r\n\"]
-STRINGOQOUTES=[^\r\n\']
+STRING=[^\"\n]
+STRINGOQOUTES=[^\'\n]
 
 LITERAL={NUMBER} | {STRING} | {TRUE} | {FALSE} | {NULL}
 LITERAL_ANY={LITERAL} | {NAME}
@@ -131,7 +131,7 @@ FF=[_FF]
 // Whitespace and comments
 CRLF=\R
 WS=[\ \t\r\n\u000C]
-COMMENT=("//"[^\r\n]*)|("{" [^{}] ~"}")
+COMMENT=("//"[^\r\n]*)|("{"[^{}]*~"}")
 
 OPERATIONS={ADD} | {SUB} | {DIV} | {MUL} | {ASSIGN}
 
@@ -153,10 +153,11 @@ OPERATIONS={ADD} | {SUB} | {DIV} | {MUL} | {ASSIGN}
              {DIV}                   { yybegin(YYINITIAL); return FDLTypes.DIV; }
              {MUL}                   { yybegin(YYINITIAL); return FDLTypes.MUL; }
 <YYINITIAL>  {SEMI}                  { yybegin(YYINITIAL); return FDLTypes.SEMI; }
-             \"{STRING}*\"
-             | \'{STRINGOQOUTES}*\'
-             | \"{NAME}\"
-             | \'{NAME}\'            { yybegin(YYINITIAL); return FDLTypes.STRING; }
+<YYINITIAL>  (\"{STRING}*~\")
+             | ("'"{STRINGOQOUTES}*~"'")
+             | (\"{NAME}*~\")
+             | ("'"{NAME}*~"'")      { yybegin(YYINITIAL); return FDLTypes.STRING; }
 
              ({CRLF}|{WS})+          { yybegin(YYINITIAL); return TokenType.WHITE_SPACE; }
-[^]                                  { throw new Error("Illegal character <"+yytext()+">"); }
+[^]                                  { return TokenType.BAD_CHARACTER; }// throw new Error("Illegal character <"+yytext()+">"); }
+
