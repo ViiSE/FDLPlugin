@@ -1,0 +1,27 @@
+<idea-plugin>
+    <id>com.github.viise.fdl-plugin</id>
+    <name>FDL</name>
+    <vendor email="viise@outlook.com" url="https://www.github.com/ViiSE">ViiSE</vendor>
+
+    <description><![CDATA[
+    Enter short description for your plugin here.<br>
+    <em>most HTML tags may be used</em>
+    ]]></description>
+
+    <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+        <fileType name="FDL File" implementationClass="com.github.viise.fdl.FDLFileType"
+                  fieldName="INSTANCE" language="FDL" extensions="fdl"/>
+        <fileTypeFactory implementation="com.github.viise.fdl.FDLFileTypeFactory"/>
+        <lang.parserDefinition language="FDL"
+                               implementationClass="com.github.viise.fdl.FDLParserDefinition"/>
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+    </actions>
+</idea-plugin>

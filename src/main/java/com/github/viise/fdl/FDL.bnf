@@ -1,0 +1,77 @@
+{
+  parserClass="com.github.viise.fdl.FDLParser"
+
+  extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+  psiClassPrefix="FDL"
+  psiImplClassSuffix="Impl"
+  psiPackage="com.github.viise.fdl"
+  psiImplPackage="com.github.viise.fdl.impl"
+
+  elementTypeHolderClass="com.github.viise.fdl.psi.FDLTypes"
+  elementTypeClass="com.github.viise.fdl.psi.FDLElementType"
+  tokenTypeClass="com.github.viise.fdl.psi.FDLTokenType"
+
+//  psiImplUtilClass="com.github.viise.fdl.psi.impl.FDLPsiImplUtil"
+
+// debug only
+//  tokens = [
+//     AND      = 'and'
+//     CONST    = 'const'
+//     ELIF     = 'elif'
+//     ELSE     = 'else'
+//     ELSEIF   = 'elseif'
+//     END      = 'end'
+//     ENDMACRO = 'andmacro'
+//     EXCEPT   = 'except'
+//     FINALLY  = 'finally'
+//     FUNCTION = 'function'
+//     IF       = 'if'
+//     INPUT    = 'input'
+//     LINK     = 'link'
+//     MACRO    = 'macro'
+//     NIL      = 'nil'
+//     NOT      = 'not'
+//     NULL     = 'null'
+//     OR       = 'or'
+//     OUTPUT   = 'output'
+//     PRIVATE  = 'private'
+//     PROCEDURE= 'procedure'
+//     RAISE    = 'raise'
+//     STRUCT   = 'struct'
+//     TABLE    = 'table'
+//     TRY      = 'try'
+//     USES     = 'uses'
+//     VAR      = 'var'
+//     WHILE    = 'while'
+//     XOR      = 'xor'
+//     TRUE     = 'true'
+//     FALSE    = 'false'
+//
+//     NAME     = 'regexp:[^\n\r(){}\[\];,.=><!~?:+\-*/&|^%@"]'
+//     INTEGER  = 'regexp:[0-9]+'
+//     FLOAT    = 'regexp:[0-9]*\.?[0-9]*'
+//     HEX      = 'regexp:0x([0-9]|[a-f]|[A-F])'
+//     STRING   = 'regexp:"[^\r\n]*"'
+//
+//     ADD      = 'add'
+//     SUB      = 'sub'
+//     DIV      = 'div'
+//     MUL      = 'mul'
+//     ASSIGN   = 'assign'
+//
+//     COMMENT  = 'regexp:\{.*?}'
+//     LINE_COMMENT = 'regexp://[^\r\n]*'
+//  ]
+}
+
+program      ::= rules*
+rules        ::= (varRules | expressions | COMMENT)
+number       ::= (INTEGER | FLOAT | HEX)
+literal      ::= (number | STRING | TRUE | FALSE | NULL)
+literalAny   ::= literal | NAME
+varRules     ::= varRule1 | varRule2
+operations   ::= (ADD | SUB | DIV | MUL | ASSIGN)
+expressions  ::= (NAME ' '* operations ' '* literalAny ' '* SEMI)
+varRule1     ::= (VAR ' '* NAME ' '* ASSIGN ' '* literalAny ' '* SEMI)
+varRule2     ::= (VAR ' '* NAME ' '* ASSIGN ' '* literalAny ' '* operations ' '* literalAny ' '* SEMI)

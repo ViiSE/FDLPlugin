@@ -1,0 +1,82 @@
+{
+  parserClass="com.github.viise.fdl.FDLParser"
+
+  extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+  psiClassPrefix="FDL"
+  psiImplClassSuffix="Impl"
+  psiPackage="com.github.viise.fdl"
+  psiImplPackage="com.github.viise.fdl.impl"
+
+  elementTypeHolderClass="com.github.viise.fdl.psi.FDLTypes"
+  elementTypeClass="com.github.viise.fdl.psi.FDLElementType"
+  tokenTypeClass="com.github.viise.fdl.psi.FDLTokenType"
+
+  psiImplUtilClass="com.github.viise.fdl.psi.impl.FDLPsiImplUtil"
+}
+
+program::=rules EOF;
+
+rules
+   :
+   (varRules
+   |
+   comment
+   |
+   expressions)*
+   ;
+
+number
+   : INTEGER
+   | FLOAT
+   | HEX
+   ;
+
+
+literal
+   : number
+   |
+   STRING
+   |
+   TRUE
+   |
+   FALSE
+   |
+   NULL
+   ;
+
+literalName: NAME;
+
+literalAny
+   :
+   literal
+   |
+   literalName
+   ;
+
+varRules
+   :
+   varRule1
+   |
+   varRule2
+   ;
+
+operations
+   :
+   ADD
+   |
+   SUB
+   |
+   DIV
+   |
+   MUL
+   |
+   ASSIGN
+   ;
+
+expressions: literalName (' ')* operations (' ')* literalAny (' ')* SEMI (' ')* comment* ;
+
+varRule1: VAR (' ')* literalName (' ')* ASSIGN (' ')* literalAny (' ')* SEMI (' ')* comment* ;
+varRule2: VAR (' ')* literalName (' ')* ASSIGN (' ')* literalAny (' ')* operations (' ')* literalAny (' ')* SEMI (' ')* comment*;
+
+comment: COMMENT | LINE_COMMENT;
