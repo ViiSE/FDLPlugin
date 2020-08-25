@@ -100,8 +100,8 @@ RBRACE="}"
 LBRACK="["
 RBRACK="]"
 SEMI=[;]
-//COMMA=,
-DOT=[.]
+COMMA=","
+DOT="."
 
 // Operators
 ASSIGN=[=]
@@ -140,8 +140,10 @@ OPERATIONS={ADD} | {SUB} | {DIV} | {MUL} | {ASSIGN}
 %%
 <YYINITIAL>  {COMMENT}               { yybegin(YYINITIAL); return FDLTypes.COMMENT; }
 <YYINITIAL>  {VAR}                   { yybegin(YYINITIAL); return FDLTypes.VAR; }
+<YYINITIAL>  {USES}                  { yybegin(YYINITIAL); return FDLTypes.USES; }
 <YYINITIAL>  {NAME}                  { yybegin(YYINITIAL); return FDLTypes.NAME; }
 <YYINITIAL>  ({ASSIGN}|{ASSIGN2})    { yybegin(YYINITIAL); return FDLTypes.ASSIGN; }
+             {COMMA}                 { yybegin(YYINITIAL); return FDLTypes.COMMA; }
              {INTEGER}               { yybegin(YYINITIAL); return FDLTypes.INTEGER; }
              {FLOAT}                 { yybegin(YYINITIAL); return FDLTypes.FLOAT; }
              {TRUE}                  { yybegin(YYINITIAL); return FDLTypes.TRUE; }
@@ -160,4 +162,3 @@ OPERATIONS={ADD} | {SUB} | {DIV} | {MUL} | {ASSIGN}
 
              ({CRLF}|{WS})+          { yybegin(YYINITIAL); return TokenType.WHITE_SPACE; }
 [^]                                  { return TokenType.BAD_CHARACTER; }// throw new Error("Illegal character <"+yytext()+">"); }
-

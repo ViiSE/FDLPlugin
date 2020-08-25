@@ -7,6 +7,10 @@ import com.intellij.psi.PsiElement;
 
 public class FDLVisitor extends PsiElementVisitor {
 
+  public void visitCondWComma1(@NotNull FDLCondWComma1 o) {
+    visitPsiElement(o);
+  }
+
   public void visitExpressions(@NotNull FDLExpressions o) {
     visitPsiElement(o);
   }
@@ -31,15 +35,15 @@ public class FDLVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
-  public void visitVarRule1(@NotNull FDLVarRule1 o) {
+  public void visitSubWComma1(@NotNull FDLSubWComma1 o) {
     visitPsiElement(o);
   }
 
-  public void visitVarRule2(@NotNull FDLVarRule2 o) {
+  public void visitUsesRule(@NotNull FDLUsesRule o) {
     visitPsiElement(o);
   }
 
-  public void visitVarRules(@NotNull FDLVarRules o) {
+  public void visitVarRule(@NotNull FDLVarRule o) {
     visitPsiElement(o);
   }
 

@@ -5,12 +5,15 @@ import java.util.List;
 import org.jetbrains.annotations.*;
 import com.intellij.psi.PsiElement;
 
-public interface FDLVarRule2 extends PsiElement {
+public interface FDLSubWComma1 extends PsiElement {
+
+  @NotNull
+  List<FDLCondWComma1> getCondWComma1List();
 
   @NotNull
   List<FDLLiteralAny> getLiteralAnyList();
 
   @NotNull
-  FDLOperations getOperations();
+  List<FDLOperations> getOperationsList();
 
 }

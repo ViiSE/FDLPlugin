@@ -5,9 +5,9 @@ import java.util.List;
 import org.jetbrains.annotations.*;
 import com.intellij.psi.PsiElement;
 
-public interface FDLVarRule1 extends PsiElement {
+public interface FDLCondWComma1 extends PsiElement {
 
   @NotNull
-  FDLLiteralAny getLiteralAny();
+  List<FDLSubWComma1> getSubWComma1List();
 
 }

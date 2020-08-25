@@ -5,15 +5,6 @@ import java.util.List;
 import org.jetbrains.annotations.*;
 import com.intellij.psi.PsiElement;
 
-public interface FDLRules extends PsiElement {
-
-  @Nullable
-  FDLExpressions getExpressions();
-
-  @Nullable
-  FDLUsesRule getUsesRule();
-
-  @Nullable
-  FDLVarRule getVarRule();
+public interface FDLUsesRule extends PsiElement {
 
 }

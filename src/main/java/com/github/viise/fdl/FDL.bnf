@@ -66,12 +66,14 @@
 }
 
 program      ::= rules*
-rules        ::= (varRules | expressions | COMMENT)
+rules        ::= (varRule | expressions | usesRule | COMMENT)
 number       ::= (INTEGER | FLOAT | HEX)
-literal      ::= (number | STRING | TRUE | FALSE | NULL)
+literal      ::= (number | TRUE | FALSE | STRING | NULL)
 literalAny   ::= literal | NAME
-varRules     ::= varRule1 | varRule2
 operations   ::= (ADD | SUB | DIV | MUL | ASSIGN)
 expressions  ::= (NAME ' '* operations ' '* literalAny ' '* SEMI)
-varRule1     ::= (VAR ' '* NAME ' '* ASSIGN ' '* literalAny ' '* SEMI)
-varRule2     ::= (VAR ' '* NAME ' '* ASSIGN ' '* literalAny ' '* operations ' '* literalAny ' '* SEMI)
+usesRule     ::= (USES ' '* NAME ' '* ASSIGN ' '* STRING ' '* SEMI)
+
+varRule      ::= (VAR condWComma1 ' '* SEMI)
+condWComma1  ::= ' '* NAME ' '* (COMMA ' '* NAME)* subWComma1*
+subWComma1   ::= ASSIGN literalAny ' '* (operations ' '* literalAny ' '*)* (COMMA ' '* condWComma1)*

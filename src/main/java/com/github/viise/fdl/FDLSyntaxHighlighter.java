@@ -16,6 +16,10 @@ public class FDLSyntaxHighlighter extends SyntaxHighlighterBase {
             "FDL_VAR",
             DefaultLanguageHighlighterColors.KEYWORD);
 
+    public static final TextAttributesKey USES = TextAttributesKey.createTextAttributesKey(
+            "FDL_USES",
+            DefaultLanguageHighlighterColors.KEYWORD);
+
     public static final TextAttributesKey LINE_COMMENT = TextAttributesKey.createTextAttributesKey(
             "FDL_COMMENT",
             DefaultLanguageHighlighterColors.LINE_COMMENT);
@@ -56,15 +60,14 @@ public class FDLSyntaxHighlighter extends SyntaxHighlighterBase {
             "FDL_BAD_CHAR",
             HighlighterColors.BAD_CHARACTER);
 
-    private static final TextAttributesKey[] FDL_VAR_KEYS     = new TextAttributesKey[]{VAR};
-    private static final TextAttributesKey[] FDL_COMMENT_KEYS = new TextAttributesKey[]{LINE_COMMENT, BLOCK_COMMENT};
-    private static final TextAttributesKey[] FDL_NUMBER_KEYS = new TextAttributesKey[]{INTEGER, FLOAT, HEX};
-    private static final TextAttributesKey[] FDL_FLOAT_KEYS = new TextAttributesKey[]{FLOAT};
-    private static final TextAttributesKey[] FDL_STRING_KEYS = new TextAttributesKey[]{STRING};
-    private static final TextAttributesKey[] FDL_BOOLEAN_KEYS = new TextAttributesKey[]{TRUE, FALSE};
-    private static final TextAttributesKey[] FDL_SEMI_KEYS = new TextAttributesKey[]{SEMI};
+    private static final TextAttributesKey[] FDL_KWORD_KEYS    = new TextAttributesKey[]{VAR, USES, TRUE, FALSE};
+    private static final TextAttributesKey[] FDL_COMMENT_KEYS  = new TextAttributesKey[]{LINE_COMMENT, BLOCK_COMMENT};
+    private static final TextAttributesKey[] FDL_NUMBER_KEYS   = new TextAttributesKey[]{INTEGER, FLOAT, HEX};
+    private static final TextAttributesKey[] FDL_STRING_KEYS   = new TextAttributesKey[]{STRING};
+//    private static final TextAttributesKey[] FDL_BOOLEAN_KEYS  = new TextAttributesKey[]{TRUE, FALSE};
+    private static final TextAttributesKey[] FDL_SEMI_KEYS     = new TextAttributesKey[]{SEMI};
     private static final TextAttributesKey[] FDL_BAD_CHAR_KEYS = new TextAttributesKey[]{BAD_CHAR};
-    private static final TextAttributesKey[] EMPTY_KEYS = new TextAttributesKey[0];
+    private static final TextAttributesKey[] EMPTY_KEYS        = new TextAttributesKey[0];
 
     @Override
     public @NotNull Lexer getHighlightingLexer() {
@@ -74,19 +77,21 @@ public class FDLSyntaxHighlighter extends SyntaxHighlighterBase {
     @Override
     public @NotNull TextAttributesKey[] getTokenHighlights(IElementType tokenType) {
         if(tokenType.equals(FDLTypes.VAR))
-            return FDL_VAR_KEYS;
+            return FDL_KWORD_KEYS;
+        else if(tokenType.equals(FDLTypes.USES))
+            return FDL_KWORD_KEYS;
         else if(tokenType.equals(FDLTypes.COMMENT))
             return FDL_COMMENT_KEYS;
         else if(tokenType.equals(FDLTypes.INTEGER))
             return FDL_NUMBER_KEYS;
         else if(tokenType.equals(FDLTypes.FLOAT))
-            return FDL_FLOAT_KEYS;
+            return FDL_NUMBER_KEYS;
         else if(tokenType.equals(FDLTypes.HEX))
             return FDL_NUMBER_KEYS;
         else if(tokenType.equals(FDLTypes.TRUE))
-            return FDL_BOOLEAN_KEYS;
+            return FDL_KWORD_KEYS;
         else if(tokenType.equals(FDLTypes.FALSE))
-            return FDL_BOOLEAN_KEYS;
+            return FDL_KWORD_KEYS;
         else if(tokenType.equals(FDLTypes.STRING))
             return FDL_STRING_KEYS;
         else if(tokenType.equals(FDLTypes.SEMI))

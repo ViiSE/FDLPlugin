@@ -11,14 +11,14 @@ import static com.github.viise.fdl.psi.FDLTypes.*;
 import com.intellij.extapi.psi.ASTWrapperPsiElement;
 import com.github.viise.fdl.*;
 
-public class FDLVarRulesImpl extends ASTWrapperPsiElement implements FDLVarRules {
+public class FDLVarRuleImpl extends ASTWrapperPsiElement implements FDLVarRule {
 
-  public FDLVarRulesImpl(@NotNull ASTNode node) {
+  public FDLVarRuleImpl(@NotNull ASTNode node) {
     super(node);
   }
 
   public void accept(@NotNull FDLVisitor visitor) {
-    visitor.visitVarRules(this);
+    visitor.visitVarRule(this);
   }
 
   public void accept(@NotNull PsiElementVisitor visitor) {
@@ -27,15 +27,9 @@ public class FDLVarRulesImpl extends ASTWrapperPsiElement implements FDLVarRules
   }
 
   @Override
-  @Nullable
-  public FDLVarRule1 getVarRule1() {
-    return findChildByClass(FDLVarRule1.class);
-  }
-
-  @Override
-  @Nullable
-  public FDLVarRule2 getVarRule2() {
-    return findChildByClass(FDLVarRule2.class);
+  @NotNull
+  public FDLCondWComma1 getCondWComma1() {
+    return findNotNullChildByClass(FDLCondWComma1.class);
   }
 
 }

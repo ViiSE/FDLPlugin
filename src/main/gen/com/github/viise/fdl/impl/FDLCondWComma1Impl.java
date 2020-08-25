@@ -11,14 +11,14 @@ import static com.github.viise.fdl.psi.FDLTypes.*;
 import com.intellij.extapi.psi.ASTWrapperPsiElement;
 import com.github.viise.fdl.*;
 
-public class FDLRulesImpl extends ASTWrapperPsiElement implements FDLRules {
+public class FDLCondWComma1Impl extends ASTWrapperPsiElement implements FDLCondWComma1 {
 
-  public FDLRulesImpl(@NotNull ASTNode node) {
+  public FDLCondWComma1Impl(@NotNull ASTNode node) {
     super(node);
   }
 
   public void accept(@NotNull FDLVisitor visitor) {
-    visitor.visitRules(this);
+    visitor.visitCondWComma1(this);
   }
 
   public void accept(@NotNull PsiElementVisitor visitor) {
@@ -27,21 +27,9 @@ public class FDLRulesImpl extends ASTWrapperPsiElement implements FDLRules {
   }
 
   @Override
-  @Nullable
-  public FDLExpressions getExpressions() {
-    return findChildByClass(FDLExpressions.class);
-  }
-
-  @Override
-  @Nullable
-  public FDLUsesRule getUsesRule() {
-    return findChildByClass(FDLUsesRule.class);
-  }
-
-  @Override
-  @Nullable
-  public FDLVarRule getVarRule() {
-    return findChildByClass(FDLVarRule.class);
+  @NotNull
+  public List<FDLSubWComma1> getSubWComma1List() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, FDLSubWComma1.class);
   }
 
 }

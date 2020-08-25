@@ -11,25 +11,19 @@ import static com.github.viise.fdl.psi.FDLTypes.*;
 import com.intellij.extapi.psi.ASTWrapperPsiElement;
 import com.github.viise.fdl.*;
 
-public class FDLVarRule1Impl extends ASTWrapperPsiElement implements FDLVarRule1 {
+public class FDLUsesRuleImpl extends ASTWrapperPsiElement implements FDLUsesRule {
 
-  public FDLVarRule1Impl(@NotNull ASTNode node) {
+  public FDLUsesRuleImpl(@NotNull ASTNode node) {
     super(node);
   }
 
   public void accept(@NotNull FDLVisitor visitor) {
-    visitor.visitVarRule1(this);
+    visitor.visitUsesRule(this);
   }
 
   public void accept(@NotNull PsiElementVisitor visitor) {
     if (visitor instanceof FDLVisitor) accept((FDLVisitor)visitor);
     else super.accept(visitor);
-  }
-
-  @Override
-  @NotNull
-  public FDLLiteralAny getLiteralAny() {
-    return findNotNullChildByClass(FDLLiteralAny.class);
   }
 
 }

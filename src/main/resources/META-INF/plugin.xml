@@ -21,6 +21,7 @@
                                implementationClass="com.github.viise.fdl.FDLParserDefinition"/>
         <lang.syntaxHighlighterFactory language="FDL"
                                        implementationClass="com.github.viise.fdl.FDLSyntaxHighlighterFactory"/>
+        <colorSettingsPage implementation="com.github.viise.fdl.FDLColorSettingsPage"/>
     </extensions>
 
     <actions>

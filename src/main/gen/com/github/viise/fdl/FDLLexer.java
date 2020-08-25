@@ -151,15 +151,15 @@ class FDLLexer implements FlexLexer {
 
   /* The ZZ_CMAP_A table has 1840 entries */
   static final char ZZ_CMAP_A[] = zzUnpackCMap(
-    "\11\23\1\35\1\22\2\35\1\22\6\23\4\0\1\35\1\0\1\20\1\0\1\4\2\0\1\21\2\0\1\33"+
-    "\1\31\1\0\1\32\1\27\1\34\1\16\11\17\1\30\1\26\1\0\1\30\3\0\1\1\3\3\1\7\1\11"+
-    "\5\4\1\10\1\4\1\2\3\4\1\12\1\5\1\6\1\14\1\15\1\4\1\13\2\4\4\0\1\4\1\13\2\4"+
-    "\1\24\1\0\1\25\1\0\6\23\1\36\2\23\2\0\4\4\4\0\1\4\2\0\1\23\7\0\1\4\4\0\1\4"+
-    "\5\0\17\4\1\0\2\4\4\0\4\4\16\0\5\4\7\0\1\4\1\0\1\4\1\0\5\4\1\0\2\4\2\0\4\4"+
-    "\1\0\1\4\6\0\1\4\1\0\3\4\1\0\1\4\1\0\4\4\1\0\13\4\1\0\3\4\1\0\5\23\2\0\6\4"+
-    "\1\0\7\4\1\0\1\4\15\0\1\4\1\0\15\23\1\0\1\23\1\0\2\23\1\0\2\23\1\0\1\23\3"+
-    "\4\5\0\6\23\5\0\1\4\4\0\3\23\1\0\1\23\3\0\3\4\7\23\4\0\2\4\1\23\13\4\1\0\1"+
-    "\4\7\23\2\4\2\23\1\0\4\23\2\4\2\23\3\4\2\0\1\4\7\0\1\23\1\4\1\23\6\4\3\23"+
+    "\11\23\1\24\1\22\2\24\1\22\6\23\4\0\1\24\1\0\1\20\1\0\1\4\2\0\1\21\2\0\1\35"+
+    "\1\33\1\30\1\34\1\31\1\36\1\16\11\17\1\32\1\27\1\0\1\32\3\0\1\1\3\3\1\7\1"+
+    "\11\5\4\1\10\1\4\1\2\3\4\1\12\1\5\1\6\1\14\1\15\1\4\1\13\2\4\4\0\1\4\1\13"+
+    "\2\4\1\25\1\0\1\26\1\0\6\23\1\37\2\23\2\0\4\4\4\0\1\4\2\0\1\23\7\0\1\4\4\0"+
+    "\1\4\5\0\17\4\1\0\2\4\4\0\4\4\16\0\5\4\7\0\1\4\1\0\1\4\1\0\5\4\1\0\2\4\2\0"+
+    "\4\4\1\0\1\4\6\0\1\4\1\0\3\4\1\0\1\4\1\0\4\4\1\0\13\4\1\0\3\4\1\0\5\23\2\0"+
+    "\6\4\1\0\7\4\1\0\1\4\15\0\1\4\1\0\15\23\1\0\1\23\1\0\2\23\1\0\2\23\1\0\1\23"+
+    "\3\4\5\0\6\23\5\0\1\4\4\0\3\23\1\0\1\23\3\0\3\4\7\23\4\0\2\4\1\23\13\4\1\0"+
+    "\1\4\7\23\2\4\2\23\1\0\4\23\2\4\2\23\3\4\2\0\1\4\7\0\1\23\1\4\1\23\6\4\3\23"+
     "\2\0\11\4\3\23\1\4\6\0\2\23\6\4\4\23\2\4\2\0\2\23\1\4\11\23\1\4\3\23\1\4\5"+
     "\23\2\0\1\4\3\23\4\0\6\4\6\0\10\23\6\4\3\23\1\4\2\23\1\4\7\23\2\4\2\23\2\0"+
     "\2\23\1\4\3\23\1\0\10\4\2\0\2\4\2\0\6\4\1\0\7\4\1\0\1\4\3\0\4\4\2\0\1\23\1"+
@@ -178,7 +178,7 @@ class FDLLexer implements FlexLexer {
     "\1\4\1\0\2\23\4\0\4\4\10\23\3\0\1\4\3\0\2\4\1\23\5\0\4\23\1\0\5\4\2\23\2\4"+
     "\1\23\1\4\5\0\5\23\3\4\3\0\10\23\5\4\2\23\3\0\3\4\3\23\1\0\5\23\4\4\1\23\4"+
     "\4\3\23\2\4\3\23\1\0\5\23\1\0\1\4\1\0\1\4\1\0\1\4\1\0\1\4\2\0\3\4\1\0\6\4"+
-    "\2\0\2\4\2\35\5\23\5\0\1\4\4\0\1\23\3\0\4\23\11\0\1\4\4\0\1\4\1\0\5\4\2\0"+
+    "\2\0\2\4\2\24\5\23\5\0\1\4\4\0\1\23\3\0\4\23\11\0\1\4\4\0\1\4\1\0\5\4\2\0"+
     "\1\4\1\0\4\4\1\0\3\4\2\0\4\4\5\0\5\4\4\0\1\4\4\0\4\4\3\23\2\4\5\0\2\23\2\0"+
     "\3\4\6\23\1\0\3\4\1\23\3\4\1\23\4\4\1\23\4\4\3\0\1\4\1\0\1\4\2\0\5\4\1\23"+
     "\2\4\2\23\5\4\1\0\4\4\2\23\4\0\1\4\3\23\2\4\1\23\5\4\2\23\3\0\3\4\4\0\3\4"+
@@ -198,13 +198,13 @@ class FDLLexer implements FlexLexer {
   private static final int [] ZZ_ACTION = zzUnpackAction();
 
   private static final String ZZ_ACTION_PACKED_0 =
-    "\2\0\1\1\2\2\2\3\2\1\1\4\1\1\1\5"+
-    "\1\6\1\7\1\10\1\11\1\12\3\1\1\12\1\2"+
-    "\3\0\1\13\2\0\2\14\3\0\1\15\1\16\2\17"+
-    "\3\0\1\20\1\21\1\0\1\22";
+    "\2\0\1\1\3\2\2\3\2\1\1\4\1\1\1\5"+
+    "\1\6\1\7\1\10\1\11\1\12\1\13\3\1\1\13"+
+    "\2\2\3\0\1\14\2\0\2\15\3\0\1\2\1\16"+
+    "\1\17\2\20\3\0\1\21\1\22\1\23\1\0\1\24";
 
   private static int [] zzUnpackAction() {
-    int [] result = new int[44];
+    int [] result = new int[49];
     int offset = 0;
     offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);
     return result;
@@ -229,15 +229,16 @@ class FDLLexer implements FlexLexer {
   private static final int [] ZZ_ROWMAP = zzUnpackRowMap();
 
   private static final String ZZ_ROWMAP_PACKED_0 =
-    "\0\0\0\37\0\76\0\135\0\174\0\233\0\272\0\331"+
-    "\0\370\0\u0117\0\u0136\0\76\0\76\0\76\0\76\0\76"+
-    "\0\u0155\0\u0174\0\u0193\0\u01b2\0\76\0\u01d1\0\u01f0\0\u020f"+
-    "\0\331\0\76\0\370\0\u0136\0\76\0\u022e\0\u024d\0\u026c"+
-    "\0\u028b\0\135\0\u01f0\0\76\0\u02aa\0\u02c9\0\u02e8\0\u0307"+
-    "\0\76\0\76\0\u0326\0\76";
+    "\0\0\0\40\0\100\0\140\0\200\0\240\0\300\0\340"+
+    "\0\u0100\0\u0120\0\u0140\0\u0160\0\100\0\100\0\100\0\100"+
+    "\0\100\0\100\0\u0180\0\u01a0\0\u01c0\0\u01e0\0\100\0\u0200"+
+    "\0\u0220\0\u0240\0\u0260\0\u0100\0\100\0\u0120\0\u0160\0\100"+
+    "\0\u0280\0\u02a0\0\u02c0\0\u02e0\0\u0300\0\140\0\u0240\0\100"+
+    "\0\u0320\0\u0340\0\u0360\0\u0380\0\140\0\100\0\100\0\u03a0"+
+    "\0\100";
 
   private static int [] zzUnpackRowMap() {
-    int [] result = new int[44];
+    int [] result = new int[49];
     int offset = 0;
     offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);
     return result;
@@ -260,25 +261,29 @@ class FDLLexer implements FlexLexer {
   private static final int [] ZZ_TRANS = zzUnpackTrans();
 
   private static final String ZZ_TRANS_PACKED_0 =
-    "\1\3\14\4\1\5\1\6\1\7\1\10\1\11\1\12"+
-    "\1\3\1\13\1\3\1\14\1\3\1\15\1\16\1\17"+
-    "\1\20\1\21\2\12\2\3\1\22\3\3\1\23\2\3"+
-    "\1\24\4\3\1\6\1\7\2\3\1\12\6\3\1\16"+
-    "\1\17\1\20\1\25\2\12\40\0\17\4\3\0\1\4"+
-    "\12\0\1\4\1\0\1\26\16\4\3\0\1\4\12\0"+
-    "\1\4\13\0\1\27\13\0\1\30\25\0\2\7\7\0"+
-    "\1\30\7\0\20\31\1\32\16\31\21\33\1\32\15\33"+
-    "\22\0\1\12\12\0\2\12\25\34\1\35\11\34\34\0"+
-    "\1\36\16\0\1\37\34\0\1\40\25\0\1\41\36\0"+
-    "\11\4\1\42\5\4\3\0\1\4\12\0\1\4\1\0"+
-    "\1\43\1\0\1\43\3\0\1\43\1\0\1\43\4\0"+
-    "\2\43\35\0\1\44\1\45\17\0\22\36\1\0\14\36"+
-    "\10\0\1\46\42\0\1\47\32\0\1\50\44\0\2\45"+
-    "\27\0\1\51\35\0\1\52\34\0\1\53\40\0\1\54"+
-    "\27\0";
+    "\1\3\13\4\1\5\1\6\1\7\1\10\1\11\1\12"+
+    "\1\13\1\3\1\13\1\14\1\3\1\15\1\16\1\3"+
+    "\1\17\1\20\1\21\1\22\1\23\1\13\2\3\1\24"+
+    "\3\3\1\25\2\3\1\26\4\3\1\7\1\10\2\3"+
+    "\1\13\1\3\1\13\3\3\1\16\2\3\1\20\1\21"+
+    "\1\22\1\27\1\13\41\0\17\4\3\0\1\4\13\0"+
+    "\1\4\1\0\4\4\1\30\12\4\3\0\1\4\13\0"+
+    "\1\4\1\0\1\31\16\4\3\0\1\4\13\0\1\4"+
+    "\13\0\1\32\15\0\1\33\24\0\2\10\11\0\1\33"+
+    "\6\0\20\34\1\35\17\34\21\36\1\35\16\36\22\0"+
+    "\1\13\1\0\1\13\12\0\1\13\26\37\1\40\11\37"+
+    "\36\0\1\41\15\0\1\42\35\0\1\43\26\0\1\44"+
+    "\37\0\6\4\1\45\10\4\3\0\1\4\13\0\1\4"+
+    "\1\0\11\4\1\46\5\4\3\0\1\4\13\0\1\4"+
+    "\1\0\1\47\1\0\1\47\3\0\1\47\1\0\1\47"+
+    "\4\0\2\47\36\0\1\50\1\51\20\0\22\41\1\0"+
+    "\15\41\10\0\1\52\43\0\1\53\33\0\1\54\30\0"+
+    "\4\4\1\55\12\4\3\0\1\4\13\0\1\4\16\0"+
+    "\2\51\30\0\1\56\36\0\1\57\35\0\1\60\41\0"+
+    "\1\61\30\0";
 
   private static int [] zzUnpackTrans() {
-    int [] result = new int[837];
+    int [] result = new int[960];
     int offset = 0;
     offset = zzUnpackTrans(ZZ_TRANS_PACKED_0, offset, result);
     return result;
@@ -316,12 +321,12 @@ class FDLLexer implements FlexLexer {
   private static final int [] ZZ_ATTRIBUTE = zzUnpackAttribute();
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
-    "\2\0\1\11\10\1\5\11\4\1\1\11\1\1\3\0"+
-    "\1\11\2\0\1\11\1\1\3\0\2\1\1\11\1\1"+
-    "\3\0\2\11\1\0\1\11";
+    "\2\0\1\11\11\1\6\11\4\1\1\11\2\1\3\0"+
+    "\1\11\2\0\1\11\1\1\3\0\3\1\1\11\1\1"+
+    "\3\0\1\1\2\11\1\0\1\11";
 
   private static int [] zzUnpackAttribute() {
-    int [] result = new int[44];
+    int [] result = new int[49];
     int offset = 0;
     offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);
     return result;
@@ -638,92 +643,102 @@ class FDLLexer implements FlexLexer {
             { return TokenType.BAD_CHARACTER;
             } 
             // fall through
-          case 19: break;
+          case 21: break;
           case 2: 
             { yybegin(YYINITIAL); return FDLTypes.NAME;
             } 
             // fall through
-          case 20: break;
+          case 22: break;
           case 3: 
             { yybegin(YYINITIAL); return FDLTypes.INTEGER;
             } 
             // fall through
-          case 21: break;
+          case 23: break;
           case 4: 
             { yybegin(YYINITIAL); return TokenType.WHITE_SPACE;
             } 
             // fall through
-          case 22: break;
+          case 24: break;
           case 5: 
             { yybegin(YYINITIAL); return FDLTypes.SEMI;
             } 
             // fall through
-          case 23: break;
-          case 6: 
-            { yybegin(YYINITIAL); return FDLTypes.ASSIGN;
-            } 
-            // fall through
-          case 24: break;
-          case 7: 
-            { yybegin(YYINITIAL); return FDLTypes.ADD;
-            } 
-            // fall through
           case 25: break;
-          case 8: 
-            { yybegin(YYINITIAL); return FDLTypes.SUB;
+          case 6: 
+            { yybegin(YYINITIAL); return FDLTypes.COMMA;
             } 
             // fall through
           case 26: break;
-          case 9: 
-            { yybegin(YYINITIAL); return FDLTypes.MUL;
+          case 7: 
+            { yybegin(YYINITIAL); return FDLTypes.ASSIGN;
             } 
             // fall through
           case 27: break;
-          case 10: 
-            { yybegin(YYINITIAL); return FDLTypes.DIV;
+          case 8: 
+            { yybegin(YYINITIAL); return FDLTypes.ADD;
             } 
             // fall through
           case 28: break;
-          case 11: 
-            { yybegin(YYINITIAL); return FDLTypes.STRING;
+          case 9: 
+            { yybegin(YYINITIAL); return FDLTypes.SUB;
             } 
             // fall through
           case 29: break;
-          case 12: 
-            { yybegin(YYINITIAL); return FDLTypes.COMMENT;
+          case 10: 
+            { yybegin(YYINITIAL); return FDLTypes.MUL;
             } 
             // fall through
           case 30: break;
-          case 13: 
-            { yybegin(YYINITIAL); return FDLTypes.VAR;
+          case 11: 
+            { yybegin(YYINITIAL); return FDLTypes.DIV;
             } 
             // fall through
           case 31: break;
-          case 14: 
-            { yybegin(YYINITIAL); return FDLTypes.HEX;
+          case 12: 
+            { yybegin(YYINITIAL); return FDLTypes.STRING;
             } 
             // fall through
           case 32: break;
-          case 15: 
-            { yybegin(YYINITIAL); return FDLTypes.FLOAT;
+          case 13: 
+            { yybegin(YYINITIAL); return FDLTypes.COMMENT;
             } 
             // fall through
           case 33: break;
-          case 16: 
-            { yybegin(YYINITIAL); return FDLTypes.NULL;
+          case 14: 
+            { yybegin(YYINITIAL); return FDLTypes.VAR;
             } 
             // fall through
           case 34: break;
-          case 17: 
-            { yybegin(YYINITIAL); return FDLTypes.TRUE;
+          case 15: 
+            { yybegin(YYINITIAL); return FDLTypes.HEX;
             } 
             // fall through
           case 35: break;
-          case 18: 
-            { yybegin(YYINITIAL); return FDLTypes.FALSE;
+          case 16: 
+            { yybegin(YYINITIAL); return FDLTypes.FLOAT;
             } 
             // fall through
           case 36: break;
+          case 17: 
+            { yybegin(YYINITIAL); return FDLTypes.USES;
+            } 
+            // fall through
+          case 37: break;
+          case 18: 
+            { yybegin(YYINITIAL); return FDLTypes.NULL;
+            } 
+            // fall through
+          case 38: break;
+          case 19: 
+            { yybegin(YYINITIAL); return FDLTypes.TRUE;
+            } 
+            // fall through
+          case 39: break;
+          case 20: 
+            { yybegin(YYINITIAL); return FDLTypes.FALSE;
+            } 
+            // fall through
+          case 40: break;
           default:
             zzScanError(ZZ_NO_MATCH);
           }
